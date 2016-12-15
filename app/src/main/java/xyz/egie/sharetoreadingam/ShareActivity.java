@@ -7,15 +7,22 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class ShareActivity extends AppCompatActivity {
 
-    // TODO: Handle case where user doesn't have an email set yet
+    private static final String YEP = " yep ";
+    private static final String NOPE = " nope ";
+
+    // Stores yeps and nopes:
+    private String opinionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
+
+        // TODO: Handle case where user doesn't have an email set yet
 
         View parentView = findViewById(R.id.activity_share);
         parentView.setOnClickListener(new View.OnClickListener() {
@@ -26,10 +33,36 @@ public class ShareActivity extends AppCompatActivity {
             }
         });
 
+        View yepButton = findViewById(R.id.yep_button);
+        View nopeButton = findViewById(R.id.nope_button);
+        View sendButton = findViewById(R.id.send_button);
+
+        yepButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opinionText = YEP;
+            }
+        });
+
+        nopeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opinionText = NOPE;
+            }
+        });
+
         // Get intent, action and MIME type
         Intent intent = getIntent();
         String action = intent.getAction();
         String type = intent.getType();
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ShareActivity.this, "Opinion: " + opinionText, Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
 
 //        if (Intent.ACTION_SEND.equals(action) && type != null) {
 //            if ("text/plain".equals(type)) {
@@ -46,7 +79,9 @@ public class ShareActivity extends AppCompatActivity {
         String readingEmail = ""; // todo: store this.
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{readingEmail});
-        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+
+        String opinionatedString = body + this.opinionText;
+        emailIntent.putExtra(Intent.EXTRA_TEXT, opinionatedString);
 
         if (emailIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(emailIntent);

@@ -14,15 +14,25 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:text="Hey there!"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button"
+        android:id="@+id/send_button"
+        android:text="SEND TO READING"
         android:layout_centerHorizontal="true"
         android:src="@android:drawable/btn_star_big_off"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yep_button"
+        android:layout_toLeftOf="@id/send_button"
+        android:layout_toStartOf="@id/send_button"
+        android:text="Yep"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nope_button"
+        android:layout_toRightOf="@id/send_button"
+        android:layout_toEndOf="@id/send_button"
+        android:text="Nope"/>
 
 </RelativeLayout>
