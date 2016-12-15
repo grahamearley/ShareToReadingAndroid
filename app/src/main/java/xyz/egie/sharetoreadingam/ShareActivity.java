@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class ShareActivity extends AppCompatActivity {
 
@@ -15,6 +16,15 @@ public class ShareActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
+
+        View parentView = findViewById(R.id.activity_share);
+        parentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO: Let the user know if the link was not posted to Reading!
+                finish();
+            }
+        });
 
         // Get intent, action and MIME type
         Intent intent = getIntent();
@@ -41,5 +51,13 @@ public class ShareActivity extends AppCompatActivity {
         if (emailIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(emailIntent);
         }
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+
+        // Finish up without a big ol transition:
+        overridePendingTransition(0, 0);
     }
 }
