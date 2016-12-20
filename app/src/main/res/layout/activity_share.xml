@@ -22,6 +22,13 @@
         android:layout_marginBottom="64dp">
 
         <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/error_text"
+            android:background="@color/colorPrimary"
+            android:text="You need to add your Reading email first."/>
+
+        <TextView
             style="@style/OpinionButton"
             android:id="@+id/yep_button"
             android:text="@string/yep"/>
