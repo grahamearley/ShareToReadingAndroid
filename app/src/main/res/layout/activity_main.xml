@@ -51,4 +51,35 @@
         android:layout_alignBottom="@id/email_input"
         style="@style/SendButton"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/email_input"
+        android:layout_margin="32dp"
+        android:id="@+id/divider"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/opinion_prompt"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/divider"
+        android:textSize="18sp"
+        android:text="Want the option to say yep/nope on a link?" />
+
+    <TextView
+        style="@style/OpinionButton"
+        android:text="Yep, let me say yep or nope before sending the link"
+        android:id="@+id/yep_button_opinion_option"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/opinion_prompt"/>
+
+    <TextView
+        style="@style/OpinionButton"
+        android:text="Nope, just send the link right away"
+        android:id="@+id/nope_button_opinion_option"
+        android:layout_below="@id/yep_button_opinion_option"/>
+
+
 </RelativeLayout>
