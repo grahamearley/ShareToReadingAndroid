@@ -70,6 +70,12 @@ public class ShareActivity extends AppCompatActivity {
         } else {
             finish();
         }
+
+        // If user doesn't want yep/nope options, then skip that:
+        if (!prefs.userWantsOpinionOption()) {
+            postBodyToReading();
+            finish();
+        }
     }
 
     private void setOpinionButtonOnClicks() {
