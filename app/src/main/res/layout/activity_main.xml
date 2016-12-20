@@ -66,18 +66,18 @@
         android:layout_marginBottom="8dp"
         android:layout_below="@id/divider"
         android:textSize="18sp"
-        android:text="Want the option to say yep/nope on a link?" />
+        android:text="@string/want_the_option_to_say_yep_nope_on_a_link" />
 
     <TextView
         style="@style/OpinionButton"
-        android:text="Yep, let me say yep or nope before sending the link"
+        android:text="@string/yep_let_me_say_yep_or_nope_before_sending_the_link"
         android:id="@+id/yep_button_opinion_option"
         android:layout_marginBottom="8dp"
         android:layout_below="@id/opinion_prompt"/>
 
     <TextView
         style="@style/OpinionButton"
-        android:text="Nope, just send the link right away"
+        android:text="@string/nope_just_send_the_link_right_away"
         android:id="@+id/nope_button_opinion_option"
         android:layout_below="@id/yep_button_opinion_option"/>
 

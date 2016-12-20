@@ -8,4 +8,7 @@
     <string name="you_need_to_add_your_reading_email_first">You need to add your Reading email first.</string>
     <string name="your_reading_am_post_via_email_address">Your <b>Post Via Email</b> address:</string>
     <string name="click_here_to_find_your_post_via_email_address">Click here to find your <b>Post Via Email</b> address from Reading.am</string>
+    <string name="want_the_option_to_say_yep_nope_on_a_link">Want the option to say <i>yep</i>/<i>nope</i> on a link?</string>
+    <string name="yep_let_me_say_yep_or_nope_before_sending_the_link">Yep, let me say <i>yep</i> or <i>nope</i> before sending the link</string>
+    <string name="nope_just_send_the_link_right_away">Nope, just send the link right away</string>
 </resources>
