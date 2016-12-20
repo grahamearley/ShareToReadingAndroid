@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class ShareActivity extends AppCompatActivity {
 
-    private static final String DEFAULT_PREFS = "DEFAULT_PREFS";
+    public static final String SENT_FROM_SHARE = "SENT_FROM_SHARE";
 
     private static final String YEP = " yep ";
     private static final String NOPE = " nope ";
@@ -125,6 +125,11 @@ public class ShareActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent settingsIntent = new Intent(ShareActivity.this, MainActivity.class);
+
+                // Let the Settings activity know that we want to get back
+                //  to this activity after we've set an email!
+                settingsIntent.putExtra(SENT_FROM_SHARE, true);
+
                 startActivity(settingsIntent);
             }
         });

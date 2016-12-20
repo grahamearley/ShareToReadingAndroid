@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private View hintWebLink;
 
-    private View saveEmailButton;
+    private TextView saveEmailButton;
     private EditText emailInput;
     private TextView yepOpinionSettingButton;
     private TextView nopeOpinionSettingButton;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // Get view references:
         this.hintWebLink = findViewById(R.id.email_hint);
         this.emailInput = (EditText) findViewById(R.id.email_input);
-        this.saveEmailButton = findViewById(R.id.save_button);
+        this.saveEmailButton = (TextView) findViewById(R.id.save_button);
         this.yepOpinionSettingButton = (TextView) findViewById(R.id.yep_button_opinion_option);
         this.nopeOpinionSettingButton = (TextView) findViewById(R.id.nope_button_opinion_option);
 
@@ -53,8 +53,13 @@ public class MainActivity extends AppCompatActivity {
             emailInput.setText(storedEmail);
         }
 
+        Boolean openedFromShareOverlay = getIntent().getBooleanExtra(ShareActivity.SENT_FROM_SHARE, false);
+        if (openedFromShareOverlay) {
+            saveEmailButton.setText(R.string.save_and_return_to_link);
+        }
+
         // Set OnClickListeners:
-        setSaveButtonOnClick();
+        setSaveButtonOnClick(openedFromShareOverlay);
         setEmailInputOnEnterKey();
         setWebHintOnClick();
         setOpinionSettingsOnClicks();
@@ -63,13 +68,17 @@ public class MainActivity extends AppCompatActivity {
         setOpinionSettingsUiFromPreferences();
     }
 
-    private void setSaveButtonOnClick() {
+    private void setSaveButtonOnClick(final boolean shouldFinishAfterSave) {
         saveEmailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String readingEmail = emailInput.getText().toString();
                 prefs.setReadingEmail(readingEmail);
                 hideKeyboard();
+
+                if (shouldFinishAfterSave) {
+                    finish();
+                }
             }
         });
     }
@@ -78,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         emailInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if (i == EditorInfo.IME_ACTION_SEND) {
+                if (i == EditorInfo.IME_ACTION_DONE) {
                     saveEmailButton.performClick();
                     return true;
                 }

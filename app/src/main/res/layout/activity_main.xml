@@ -31,25 +31,28 @@
         android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
         android:text="@string/click_here_to_find_your_post_via_email_address"/>
 
+    <TextView
+        android:text="@string/save"
+        android:id="@+id/save_button"
+        android:layout_below="@id/email_hint"
+        android:layout_alignEnd="@id/email_hint"
+        android:layout_alignRight="@id/email_hint"
+        style="@style/SendButton"/>
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="...@mailman.reading.am"
+        android:hint="@string/hint_mailman_reading_am"
         android:id="@+id/email_input"
         android:layout_below="@id/email_hint"
+        android:layout_toLeftOf="@id/save_button"
+        android:layout_toStartOf="@id/save_button"
+        android:layout_alignBaseline="@id/save_button"
         android:inputType="textEmailAddress"
-        android:imeOptions="actionSend"
+        android:imeOptions="actionDone"
         android:lines="1"
         android:layout_alignStart="@id/email_prompt"
         android:layout_alignLeft="@id/email_prompt"/>
-
-    <TextView
-        android:text="Save"
-        android:id="@+id/save_button"
-        android:layout_toRightOf="@id/email_input"
-        android:layout_toEndOf="@id/email_input"
-        android:layout_alignBottom="@id/email_input"
-        style="@style/SendButton"/>
 
     <TextView
         android:layout_width="wrap_content"

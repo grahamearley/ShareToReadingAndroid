@@ -11,4 +11,7 @@
     <string name="want_the_option_to_say_yep_nope_on_a_link">Want the option to say <i>yep</i> / <i>nope</i> before sending a link?</string>
     <string name="yep_let_me_say_yep_or_nope_before_sending_the_link">Yep, let me say <i>yep</i> or <i>nope</i> before sending the link</string>
     <string name="nope_just_send_the_link_right_away">Nope, just send the link right away</string>
+    <string name="save">Save</string>
+    <string name="save_and_return_to_link">Save and return to link</string>
+    <string name="hint_mailman_reading_am">...@mailman.reading.am</string>
 </resources>
