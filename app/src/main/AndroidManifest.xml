@@ -17,6 +17,7 @@
         </activity>
 
         <activity android:name=".ShareActivity"
+            android:excludeFromRecents="true"
             android:theme="@style/OverlayTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
