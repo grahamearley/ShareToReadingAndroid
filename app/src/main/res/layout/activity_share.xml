@@ -21,44 +21,18 @@
         android:layout_marginBottom="64dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/OpinionButton"
             android:id="@+id/yep_button"
-            android:textAllCaps="false"
-            android:background="@drawable/white_on_click"
-            android:layout_margin="4dp"
-            android:padding="8dp"
             android:text="Yep"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/OpinionButton"
             android:id="@+id/nope_button"
-            android:textAllCaps="false"
-            android:background="@drawable/white_on_click"
-            android:layout_margin="4dp"
-            android:padding="8dp"
             android:text="Nope"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/SendButton"
             android:id="@+id/send_button"
-            android:textAllCaps="false"
-            android:textColor="@color/white_to_black"
-            android:background="@drawable/black_to_accent"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:drawablePadding="2dp"
-            android:drawableRight="@drawable/next_arrow_white_to_black"
-            android:drawableEnd="@drawable/next_arrow_white_to_black"
-            android:clickable="true"
             android:text="Share to Reading" />
 
     </LinearLayout>

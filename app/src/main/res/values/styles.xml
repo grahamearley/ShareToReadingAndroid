@@ -14,4 +14,28 @@
         <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style>
 
+    <style name="OverlayButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="OpinionButton" parent="OverlayButton">
+        <item name="android:background">@drawable/white_on_click</item>
+    </style>
+
+    <style name="SendButton" parent="OverlayButton">
+        <item name="android:textColor">@color/white_to_black</item>
+        <item name="android:background">@drawable/black_to_accent</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:drawableRight">@drawable/next_arrow_white_to_black</item>
+        <item name="android:drawablePadding">2dp</item>
+    </style>
+
 </resources>
