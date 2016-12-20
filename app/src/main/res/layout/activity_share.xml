@@ -23,17 +23,17 @@
         <TextView
             style="@style/OpinionButton"
             android:id="@+id/yep_button"
-            android:text="Yep"/>
+            android:text="@string/yep"/>
 
         <TextView
             style="@style/OpinionButton"
             android:id="@+id/nope_button"
-            android:text="Nope"/>
+            android:text="@string/nope"/>
 
         <TextView
             style="@style/SendButton"
             android:id="@+id/send_button"
-            android:text="Share to Reading" />
+            android:text="@string/share_to_reading" />
 
     </LinearLayout>
 
