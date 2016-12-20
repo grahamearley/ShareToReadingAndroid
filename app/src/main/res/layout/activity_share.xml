@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="xyz.egie.sharetoreadingam.ShareActivity"
     android:gravity="bottom|end"
+    android:id="@+id/activity_share"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
     <LinearLayout
-        android:id="@+id/activity_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
