@@ -3,4 +3,5 @@
     <string name="yep">Yep</string>
     <string name="nope">Nope</string>
     <string name="share_to_reading">Share to Reading</string>
+    <string name="link_was_not_posted_to_reading">Link was not posted to Reading.am</string>
 </resources>

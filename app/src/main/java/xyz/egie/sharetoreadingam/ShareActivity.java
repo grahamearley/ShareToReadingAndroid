@@ -40,7 +40,7 @@ public class ShareActivity extends AppCompatActivity {
         parentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Let the user know if the link was not posted to Reading!
+                Toast.makeText(getApplicationContext(), R.string.link_was_not_posted_to_reading, Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -90,11 +90,16 @@ public class ShareActivity extends AppCompatActivity {
             }
         });
 
-        if (action.equals(Intent.ACTION_SEND) && type != null) {
-            if (type.equals("text/plain")) {
-                String body = intent.getStringExtra(Intent.EXTRA_TEXT);
-//                postBodyToReading(body);
-            }
+        if (action.equals(Intent.ACTION_SEND) && type != null && type.equals("text/plain")) {
+            final String body = intent.getStringExtra(Intent.EXTRA_TEXT);
+
+            sendButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    postBodyToReading(body);
+                    finish();
+                }
+            });
         }
     }
 
