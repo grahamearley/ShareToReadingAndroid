@@ -6,4 +6,6 @@
     <string name="link_was_not_posted_to_reading">Link was not posted to Reading.am</string>
     <string name="set_up">Set up</string>
     <string name="you_need_to_add_your_reading_email_first">You need to add your Reading email first.</string>
+    <string name="your_reading_am_post_via_email_address">Your <b>Post Via Email</b> address:</string>
+    <string name="click_here_to_find_your_post_via_email_address">Click here to find your <b>Post Via Email</b> address from Reading.am</string>
 </resources>
