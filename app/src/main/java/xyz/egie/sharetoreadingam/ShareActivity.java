@@ -174,7 +174,7 @@ public class ShareActivity extends AppCompatActivity {
 
         String readingEmail = this.prefs.getReadingEmail();
 
-        if (readingEmail != null) {
+        if (!TextUtils.isEmpty(readingEmail)) {
             yepButton.setVisibility(View.VISIBLE);
             nopeButton.setVisibility(View.VISIBLE);
 
