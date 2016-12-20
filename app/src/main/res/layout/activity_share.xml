@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/error_text"
             android:background="@color/colorPrimary"
-            android:text="You need to add your Reading email first."/>
+            android:visibility="gone"
+            android:text="@string/you_need_to_add_your_reading_email_first"/>
 
         <TextView
             style="@style/OpinionButton"

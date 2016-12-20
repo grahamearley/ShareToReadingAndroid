@@ -5,4 +5,5 @@
     <string name="share_to_reading">Share to Reading</string>
     <string name="link_was_not_posted_to_reading">Link was not posted to Reading.am</string>
     <string name="set_up">Set up</string>
+    <string name="you_need_to_add_your_reading_email_first">You need to add your Reading email first.</string>
 </resources>
