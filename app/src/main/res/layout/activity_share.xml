@@ -4,6 +4,7 @@
     tools:context="xyz.egie.sharetoreadingam.ShareActivity"
     android:gravity="bottom|end"
     android:id="@+id/activity_share"
+    android:padding="16dp"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
