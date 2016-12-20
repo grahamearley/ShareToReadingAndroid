@@ -27,6 +27,7 @@ public class ShareActivity extends AppCompatActivity {
         setContentView(R.layout.activity_share);
 
         // TODO: Handle case where user doesn't have an email set yet
+        // TODO: Let user choose whether to show the YEP/NOPE section (if not, then just jump to send)
 
         View parentView = findViewById(R.id.activity_share);
         parentView.setOnClickListener(new View.OnClickListener() {
