@@ -45,8 +45,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/send_button"
             android:textAllCaps="false"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/white"
+            android:textColor="@color/white_to_black"
+            android:background="@drawable/black_to_accent"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:layout_marginRight="4dp"
@@ -58,6 +58,7 @@
             android:drawablePadding="2dp"
             android:drawableRight="@drawable/ic_navigate_next_white_24dp"
             android:drawableEnd="@drawable/ic_navigate_next_white_24dp"
+            android:clickable="true"
             android:text="Share to Reading" />
 
     </LinearLayout>
