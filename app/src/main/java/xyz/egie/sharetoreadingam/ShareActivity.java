@@ -2,12 +2,16 @@ package xyz.egie.sharetoreadingam;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class ShareActivity extends AppCompatActivity {
 
@@ -33,14 +37,16 @@ public class ShareActivity extends AppCompatActivity {
             }
         });
 
-        View yepButton = findViewById(R.id.yep_button);
-        View nopeButton = findViewById(R.id.nope_button);
-        View sendButton = findViewById(R.id.send_button);
+        final TextView yepButton = (TextView) findViewById(R.id.yep_button);
+        final TextView nopeButton = (TextView) findViewById(R.id.nope_button);
+        TextView sendButton = (TextView) findViewById(R.id.send_button);
 
         yepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 opinionText = YEP;
+                nopeButton.setPaintFlags(nopeButton.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+                yepButton.setSelected(true);
             }
         });
 

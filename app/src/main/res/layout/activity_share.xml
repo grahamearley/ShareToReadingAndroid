@@ -1,38 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_share"
-    android:layout_width="match_parent"
+    tools:context="xyz.egie.sharetoreadingam.ShareActivity"
+    android:gravity="bottom|end"
     android:layout_height="match_parent"
-    android:paddingBottom="128dp"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:gravity="bottom"
-    tools:context="xyz.egie.sharetoreadingam.ShareActivity">
+    android:layout_width="match_parent">
 
-    <Button
+    <LinearLayout
+        android:id="@+id/activity_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/send_button"
-        android:text="SEND TO READING"
-        android:layout_centerHorizontal="true"
-        android:src="@android:drawable/btn_star_big_off"/>
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|end"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="64dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/yep_button"
-        android:layout_toLeftOf="@id/send_button"
-        android:layout_toStartOf="@id/send_button"
-        android:text="Yep"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/yep_button"
+            android:textAllCaps="false"
+            android:background="@drawable/white_on_click"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:text="Yep"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nope_button"
-        android:layout_toRightOf="@id/send_button"
-        android:layout_toEndOf="@id/send_button"
-        android:text="Nope"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nope_button"
+            android:textAllCaps="false"
+            android:background="@drawable/white_on_click"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:text="Nope"/>
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_button"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:layout_margin="4dp"
+            android:padding="8dp"
+            android:text="Share to Reading >" />
+
+    </LinearLayout>
+
+</FrameLayout>
