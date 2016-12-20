@@ -3,6 +3,8 @@ package xyz.egie.sharetoreadingam;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.customtabs.CustomTabsIntent;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -40,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         hintWebLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent hintIntent = new Intent(Intent.ACTION_VIEW);
-                hintIntent.setData(Uri.parse(SETTINGS_EXTRAS_URL));
-                startActivity(hintIntent);
+                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                builder.setToolbarColor(ResourcesCompat.getColor(getResources(), R.color.colorAccent, null));
+
+                CustomTabsIntent customTabsIntent = builder.build();
+                customTabsIntent.launchUrl(MainActivity.this, Uri.parse(SETTINGS_EXTRAS_URL));
             }
         });
     }
