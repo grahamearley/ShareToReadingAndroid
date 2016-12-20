@@ -70,6 +70,8 @@
 
     <TextView
         style="@style/OpinionButton"
+        android:gravity="start"
+        android:background="@drawable/yellow_outline_white_on_click"
         android:text="@string/yep_let_me_say_yep_or_nope_before_sending_the_link"
         android:id="@+id/yep_button_opinion_option"
         android:layout_marginBottom="8dp"
@@ -77,6 +79,8 @@
 
     <TextView
         style="@style/OpinionButton"
+        android:gravity="start"
+        android:background="@drawable/yellow_outline_white_on_click"
         android:text="@string/nope_just_send_the_link_right_away"
         android:id="@+id/nope_button_opinion_option"
         android:layout_below="@id/yep_button_opinion_option"/>

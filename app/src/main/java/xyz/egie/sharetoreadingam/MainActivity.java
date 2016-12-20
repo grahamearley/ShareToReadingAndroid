@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private View saveEmailButton;
     private EditText emailInput;
+    private View yepOpinionSettingButton;
+    private View nopeOpinionSettingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         this.emailInput = (EditText) findViewById(R.id.email_input);
         this.saveEmailButton = (TextView) findViewById(R.id.save_button);
+        this.yepOpinionSettingButton = findViewById(R.id.yep_button_opinion_option);
+        this.nopeOpinionSettingButton = findViewById(R.id.nope_button_opinion_option);
 
         // Fill in the input field if there is an address already stored:
         String storedEmail = prefs.getReadingEmail();
