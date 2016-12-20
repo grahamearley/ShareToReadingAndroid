@@ -1,7 +1,7 @@
 package xyz.egie.sharetoreadingam;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
@@ -25,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
     private View saveEmailButton;
     private EditText emailInput;
-    private View yepOpinionSettingButton;
-    private View nopeOpinionSettingButton;
+    private TextView yepOpinionSettingButton;
+    private TextView nopeOpinionSettingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.prefs = PreferencesManager.getInstance(this);
 
         // Flatten out the action bar:
         ActionBar actionBar = getSupportActionBar();
@@ -39,16 +40,12 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setElevation(0);
         }
 
-        this.prefs = PreferencesManager.getInstance(this);
-
+        // Get view references:
         this.hintWebLink = findViewById(R.id.email_hint);
-        setHintOnClick();
-
-
         this.emailInput = (EditText) findViewById(R.id.email_input);
-        this.saveEmailButton = (TextView) findViewById(R.id.save_button);
-        this.yepOpinionSettingButton = findViewById(R.id.yep_button_opinion_option);
-        this.nopeOpinionSettingButton = findViewById(R.id.nope_button_opinion_option);
+        this.saveEmailButton = findViewById(R.id.save_button);
+        this.yepOpinionSettingButton = (TextView) findViewById(R.id.yep_button_opinion_option);
+        this.nopeOpinionSettingButton = (TextView) findViewById(R.id.nope_button_opinion_option);
 
         // Fill in the input field if there is an address already stored:
         String storedEmail = prefs.getReadingEmail();
@@ -56,8 +53,14 @@ public class MainActivity extends AppCompatActivity {
             emailInput.setText(storedEmail);
         }
 
+        // Set OnClickListeners:
         setSaveButtonOnClick();
         setEmailInputOnEnterKey();
+        setWebHintOnClick();
+        setOpinionSettingsOnClicks();
+
+        // Set opinion settings from saved prefs:
+        setOpinionSettingsUiFromPreferences();
     }
 
     private void setSaveButtonOnClick() {
@@ -84,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setHintOnClick() {
+    private void setWebHintOnClick() {
         hintWebLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +100,51 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void hideKeyboard() {
+    private void setOpinionSettingsOnClicks() {
+        yepOpinionSettingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setShowOptionsToSelected();
+                prefs.setUserOpinionOption(true);
+            }
+        });
+
+        nopeOpinionSettingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setShowOptionsToUnselected();
+                prefs.setUserOpinionOption(false);
+            }
+        });
+    }
+
+    private void setShowOptionsToSelected() {
+        yepOpinionSettingButton.setSelected(true);
+        nopeOpinionSettingButton.setSelected(false);
+
+        nopeOpinionSettingButton.setPaintFlags(nopeOpinionSettingButton.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        yepOpinionSettingButton.setPaintFlags(0);
+    }
+
+    private void setShowOptionsToUnselected() {
+        nopeOpinionSettingButton.setSelected(true);
+        yepOpinionSettingButton.setSelected(false);
+
+        yepOpinionSettingButton.setPaintFlags(yepOpinionSettingButton.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        nopeOpinionSettingButton.setPaintFlags(0);
+    }
+
+    private void setOpinionSettingsUiFromPreferences() {
+        boolean shouldShowOpinionOption = prefs.userWantsOpinionOption();
+
+        if (shouldShowOpinionOption) {
+            yepOpinionSettingButton.performClick();
+        } else {
+            nopeOpinionSettingButton.performClick();
+        }
+    }
+
+    private void hideKeyboard() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         //Find the currently focused view, so we can grab the correct window token from it.
         View view = getCurrentFocus();

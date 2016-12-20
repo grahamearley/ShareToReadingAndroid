@@ -11,6 +11,7 @@ public class PreferencesManager {
 
     private static final String DEFAULT_PREFS_NAME = "DEFAULT_PREFS_NAME";
     private static final String READING_EMAIL = "READING_EMAIL";
+    private static final String OPINION_OPTION = "OPINION_OPTION";
 
     private SharedPreferences prefs;
     private static PreferencesManager instance;
@@ -32,5 +33,14 @@ public class PreferencesManager {
 
     public String getReadingEmail() {
         return prefs.getString(READING_EMAIL, null);
+    }
+
+    public void setUserOpinionOption(boolean shouldShowOpinionOption) {
+        prefs.edit().putBoolean(OPINION_OPTION, shouldShowOpinionOption).apply();
+    }
+
+    public boolean userWantsOpinionOption() {
+        // By default, we'll show the opinion options (so default is true)
+        return prefs.getBoolean(OPINION_OPTION, true);
     }
 }
