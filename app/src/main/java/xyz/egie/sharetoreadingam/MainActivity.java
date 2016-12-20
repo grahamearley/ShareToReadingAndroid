@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -29,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Flatten out the action bar:
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setElevation(0);
+        }
+
         this.prefs = PreferencesManager.getInstance(this);
 
         this.hintWebLink = findViewById(R.id.email_hint);
