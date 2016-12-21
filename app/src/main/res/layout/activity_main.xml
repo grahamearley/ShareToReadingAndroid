@@ -45,6 +45,8 @@
             android:layout_below="@id/email_hint"
             android:layout_alignEnd="@id/email_hint"
             android:layout_alignRight="@id/email_hint"
+            android:drawableRight="@null"
+            android:drawableEnd="@null"
             style="@style/SendButton"/>
 
         <EditText
@@ -72,6 +74,8 @@
             android:layout_marginBottom="8dp"
             android:layout_below="@id/email_input"
             android:gravity="end"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:textSize="18sp"
             android:text="@string/want_the_option_to_say_yep_nope_on_a_link" />
 
