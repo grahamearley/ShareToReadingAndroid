@@ -3,14 +3,13 @@ package xyz.egie.sharetoreadingam;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ShareActivity extends AppCompatActivity {
+public class ShareActivity extends ReadingActivity {
 
     public static final String SENT_FROM_SHARE = "SENT_FROM_SHARE";
 
@@ -38,9 +37,6 @@ public class ShareActivity extends AppCompatActivity {
         this.prefs = PreferencesManager.getInstance(this);
 
         this.opinionText = NO_OPINION;
-
-        // TODO: Handle case where user doesn't have an email set yet
-        // TODO: Let user choose whether to show the YEP/NOPE section (if not, then just jump to send)
 
         // Clicking outside of the overlay will close the activity:
         View parentView = findViewById(R.id.activity_share);
@@ -139,7 +135,7 @@ public class ShareActivity extends AppCompatActivity {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
         emailIntent.setData(Uri.parse("mailto:")); // only email apps should handle this
 
-        String readingEmail = this.prefs.getReadingEmail(); // todo: store this.
+        String readingEmail = this.prefs.getReadingEmail();
 
         // Set email to send to Reading.am address
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{readingEmail});

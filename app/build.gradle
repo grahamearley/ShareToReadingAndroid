@@ -29,5 +29,8 @@ dependencies {
     // Chrome custom tabs:
     compile 'com.android.support:customtabs:25.1.0'
 
+    // For custom fonts:
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+
     testCompile 'junit:junit:4.12'
 }
