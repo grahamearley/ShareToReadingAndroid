@@ -8,7 +8,7 @@ An Android app for simplifying [Reading.am](https://www.reading.am)'s *Post Via 
 ## How it works
 1. Add your *Post Via Email* address (found in your Readin.am settings)
 2. Choose "Share to Reading.am" when sharing a link from another app
-3. Choose yep or nope if you'd like
+3. Choose yep or nope if you want
 4. Select your favorite email app and tap send!
 
 This app doesn't connect to the internet, and it doesn't send data anywhere (other than using your own email app to send links to your *Post Via Email* address).
