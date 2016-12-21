@@ -1,5 +1,5 @@
 # ✌︎ Share to Reading.am (for Android)
-An Android app for simplifying [Reading.am](www.reading.am)'s *Post Via Email* feature from an Android device.
+An Android app for simplifying [Reading.am](https://www.reading.am)'s *Post Via Email* feature from an Android device.
 
 <img src="http://i.imgur.com/rxM8hJd.png" alt="Settings page" width="200px">
 <img src="http://i.imgur.com/uRIYJoe.png" alt="Share chooser" width="200px">
