@@ -47,6 +47,8 @@
             android:layout_alignRight="@id/email_hint"
             android:drawableRight="@null"
             android:drawableEnd="@null"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
             style="@style/SendButton"/>
 
         <EditText
