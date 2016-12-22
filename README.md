@@ -1,5 +1,5 @@
 # ✌︎ Share to Reading.am (for Android)
-An Android app for simplifying [Reading.am](https://www.reading.am)'s *Post Via Email* feature from an Android device.
+An unofficial Android app for simplifying [Reading.am](https://www.reading.am)'s *Post Via Email* feature from an Android device.
 
 <img src="http://i.imgur.com/rxM8hJd.png" alt="Settings page" width="200px">
 <img src="http://i.imgur.com/uRIYJoe.png" alt="Share chooser" width="200px">
@@ -12,3 +12,5 @@ An Android app for simplifying [Reading.am](https://www.reading.am)'s *Post Via 
 4. Select your favorite email app and tap send!
 
 This app doesn't connect to the internet, and it doesn't send data anywhere (other than using your own email app to send links to your *Post Via Email* address).
+
+**NOTE:** I am not the developer of Reading.am. This app is unofficial!
