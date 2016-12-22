@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Created by grahamearley on 12/20/16.
+ * A class for managing the SharedPreferences of the app.
  */
 
 public class PreferencesManager {

@@ -9,8 +9,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ShareActivity extends ReadingActivity {
+public class ShareOverlayActivity extends ReadingActivity {
 
+    // Intent key:
     public static final String SENT_FROM_SHARE = "SENT_FROM_SHARE";
 
     private static final String YEP = " yep ";
@@ -24,7 +25,7 @@ public class ShareActivity extends ReadingActivity {
 
     private PreferencesManager prefs;
 
-    // Stores yeps and nopes:
+    // Stores yeps and nopes (so we can pin those onto our email):
     private String opinionText;
 
     // Store body of Share email
@@ -33,9 +34,10 @@ public class ShareActivity extends ReadingActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_share);
+        setContentView(R.layout.activity_share_overlay);
         this.prefs = PreferencesManager.getInstance(this);
 
+        // Start off with no yep or nope opinion:
         this.opinionText = NO_OPINION;
 
         // Clicking outside of the overlay will close the activity:
@@ -55,7 +57,7 @@ public class ShareActivity extends ReadingActivity {
 
         setOpinionButtonOnClicks();
 
-        // Get intent, action and MIME type
+        // Get share intent, action and MIME type
         Intent intent = getIntent();
         String action = intent.getAction();
         String type = intent.getType();
@@ -104,6 +106,9 @@ public class ShareActivity extends ReadingActivity {
         });
     }
 
+    /**
+     * Set the Send button to send the email to Reading
+     */
     private void setSendToReading() {
         this.sendButton.setText(R.string.share_to_reading);
         this.sendButton.setOnClickListener(new View.OnClickListener() {
@@ -115,12 +120,19 @@ public class ShareActivity extends ReadingActivity {
         });
     }
 
+    /**
+     * Set the Send button to open the Settings activity.
+     *
+     *  We use this when the user needs to set up their email;
+     *   this way we don't need to have two buttons
+     *   (we just repurpose one of them).
+     */
     private void setSendToOpenSettings() {
         this.sendButton.setText(R.string.set_up);
         this.sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent settingsIntent = new Intent(ShareActivity.this, MainActivity.class);
+                Intent settingsIntent = new Intent(ShareOverlayActivity.this, SettingsActivity.class);
 
                 // Let the Settings activity know that we want to get back
                 //  to this activity after we've set an email!
@@ -169,6 +181,14 @@ public class ShareActivity extends ReadingActivity {
         nopeButton.setSelected(false);
     }
 
+    /**
+     * When the overlay activity resumes, we will check whether
+     *  there is an email saved. Update the UI accordingly based
+     *  on that change
+     *
+     *  (show yep/nope if there's an email; otherwise show the
+     *   error message and the link to the Settings activity)
+     */
     @Override
     public void onResume() {
         super.onResume();

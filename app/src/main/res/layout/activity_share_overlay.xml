@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="xyz.egie.sharetoreadingam.ShareActivity"
+    tools:context="xyz.egie.sharetoreadingam.ShareOverlayActivity"
     android:gravity="bottom|end"
     android:id="@+id/activity_share"
     android:padding="16dp"

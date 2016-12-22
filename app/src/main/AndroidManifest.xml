@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity">
+            android:name=".SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -18,7 +18,7 @@
 
         </activity>
 
-        <activity android:name=".ShareActivity"
+        <activity android:name=".ShareOverlayActivity"
             android:excludeFromRecents="true"
             android:theme="@style/OverlayTheme">
             <intent-filter>

@@ -15,7 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends ReadingActivity {
+public class SettingsActivity extends ReadingActivity {
 
     private static final String SETTINGS_EXTRAS_URL = "https://www.reading.am/settings/extras";
     PreferencesManager prefs;
@@ -30,7 +30,7 @@ public class MainActivity extends ReadingActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_settings);
         this.prefs = PreferencesManager.getInstance(this);
 
         // Flatten out the action bar:
@@ -52,7 +52,9 @@ public class MainActivity extends ReadingActivity {
             emailInput.setText(storedEmail);
         }
 
-        Boolean openedFromShareOverlay = getIntent().getBooleanExtra(ShareActivity.SENT_FROM_SHARE, false);
+        // If this activity was started from the share overlay (from another app),
+        //  then change the Save button text, and make it finish the activity right away:
+        Boolean openedFromShareOverlay = getIntent().getBooleanExtra(ShareOverlayActivity.SENT_FROM_SHARE, false);
         if (openedFromShareOverlay) {
             saveEmailButton.setText(R.string.save_and_return_to_link);
         }
@@ -67,6 +69,11 @@ public class MainActivity extends ReadingActivity {
         setOpinionSettingsUiFromPreferences();
     }
 
+    /**
+     * Set the Save button to save the email address on click.
+     *
+     * @param shouldFinishAfterSave a boolean for whether the activity should finish after saving the email.
+     */
     private void setSaveButtonOnClick(final boolean shouldFinishAfterSave) {
         saveEmailButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,11 +110,16 @@ public class MainActivity extends ReadingActivity {
                 builder.setToolbarColor(ResourcesCompat.getColor(getResources(), R.color.colorAccent, null));
 
                 CustomTabsIntent customTabsIntent = builder.build();
-                customTabsIntent.launchUrl(MainActivity.this, Uri.parse(SETTINGS_EXTRAS_URL));
+                customTabsIntent.launchUrl(SettingsActivity.this, Uri.parse(SETTINGS_EXTRAS_URL));
             }
         });
     }
 
+    /**
+     * Set on clicks for the two buttons that let you choose whether to show an
+     *  overlay with yep/nope options upon sharing, or whether to just send the link
+     *  right away.
+     */
     private void setOpinionSettingsOnClicks() {
         yepOpinionSettingButton.setOnClickListener(new View.OnClickListener() {
             @Override
