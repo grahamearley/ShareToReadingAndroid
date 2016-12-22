@@ -6,7 +6,7 @@ An Android app for simplifying [Reading.am](https://www.reading.am)'s *Post Via 
 <img src="http://i.imgur.com/zZGqIeO.png" alt="Send to Readin.am overlay" width="200px">
 
 ## How it works
-1. Add your *Post Via Email* address (found in your Readin.am settings)
+1. Add your *Post Via Email* address (found in your Reading.am settings)
 2. Choose "Share to Reading.am" when sharing a link from another app
 3. Choose yep or nope if you want
 4. Select your favorite email app and tap send!
