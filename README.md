@@ -13,4 +13,4 @@ An unofficial Android app for simplifying [Reading.am](https://www.reading.am)'s
 
 This app doesn't connect to the internet, and it doesn't send data anywhere (other than using your own email app to send links to your *Post Via Email* address).
 
-**NOTE:** I am not the developer of Reading.am. This app is unofficial!
+**NOTE:** I am not the developer of Reading.am. This app was not created in affiliation with Reading.am!
