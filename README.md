@@ -1,9 +1,7 @@
 # ✌︎ Share to Reading.am (for Android)
 An unofficial Android app for simplifying [Reading.am](https://www.reading.am)'s *Post Via Email* feature from an Android device.
 
-<img src="http://i.imgur.com/rxM8hJd.png" alt="Settings page" width="200px">
-<img src="http://i.imgur.com/uRIYJoe.png" alt="Share chooser" width="200px">
-<img src="http://i.imgur.com/zZGqIeO.png" alt="Send to Readin.am overlay" width="200px">
+<img src="http://i.imgur.com/rxM8hJd.png" alt="Settings page" width="200px"> <img src="http://i.imgur.com/uRIYJoe.png" alt="Share chooser" width="200px"> <img src="http://i.imgur.com/zZGqIeO.png" alt="Send to Readin.am overlay" width="200px">
 
 ## How it works
 1. Add your *Post Via Email* address (found in your Reading.am settings)
